@@ -10,12 +10,12 @@
     <script src="js/tasksController.js"></script>
   </head>
 
-  <body ng-controller="TasksController as task">
+  <body ng-controller="TasksController as tasks">
     <div>
     <h1> To do list </h1>
-      <form class="form-horizontal">
-        <input type="text" >
-        <button class="btn">Submit</button>
+      <form class="form-tasks">
+        <input type="text" ng-model="tasks.submittedTask"> {{ tasks.submittedTask }}
+        <button class="submit" ng-click="tasks.printTasks()">Submit</button>
       </form>
     </div>
   </body>
