@@ -1,4 +1,4 @@
-tasksList.controller('TasksController', [function(tasksFactory) {
+tasksList.controller('TasksController', [function() {
 
   var self = this;
   self.allTasks = [];

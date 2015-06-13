@@ -6,6 +6,7 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
     <script src="js/app.js"></script>
     <script src="js/tasksController.js"></script>
   </head>
@@ -19,9 +20,11 @@
       </form>
       <br>
       <ul class="list-tasks "ng-repeat="task in controller.allTasks">
-      <li>
-      {{task.task}}
-      </li>
+        <span editable-text="task.task" e-form="textBtnForm">
+        {{task.task}}
+         <input class="completed" type='checkbox' >
+        </span>
+        <button class="btn btn-default" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
       <ul>
     </div>
   </body>
