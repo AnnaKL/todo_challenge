@@ -15,8 +15,9 @@
     <div>
     <h1> To do list </h1>
       <form class="form-tasks">
-        <input type="text" ng-model="controller.submittedTask" placeholder="My new task is..">
-        <button class="submit" ng-click="controller.addTasks()">Submit</button>
+        <input type="text" ng-model="controller.submittedTask" placeholder="My new task is.." >
+        <button class="submit" ng-click="controller.addTasks()" >Submit</button>
+
       </form>
       <br>
       <ul class="list-tasks "ng-repeat="task in controller.allTasks">
@@ -33,7 +34,7 @@
           <button ng-click="tab = 1">All</button>
           <button ng-click="tab = 2">Active</button>
           <button ng-click="tab = 3">Completed</button>
-          <button  ng-click="deleteTask()">Clear completed tasks</button>
+          <button ng-click="controller.deleteTask($index)">Delete</button>
         </div>
     <div class="panel" ng-show="tab===1" ng-repeat="task in controller.allTasks">
         <h5> {{task.task}} </h5>
@@ -47,6 +48,6 @@
      <div class="panel" ng-show="tab===4" >
         <h5> {{ task.task }} </h5>
     </div>
-
+    </section>
   </body>
 </html>

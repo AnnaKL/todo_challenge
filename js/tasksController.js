@@ -7,6 +7,7 @@ tasksList.controller('TasksController', [function() {
     if(self.submittedTask != undefined) {
       var newTask = {'task': self.submittedTask, 'completed': false};
       self.allTasks.push(newTask);
+      self.submittedTask = '';
     }
   };
 
@@ -15,9 +16,11 @@ tasksList.controller('TasksController', [function() {
     return all;
   };
 
-  self.deleteTask = function() {
-   self.allTasks = _.filter(self.allTasks, function(task){
-            return !task.completed;
-    });
-  };
+  self.deleteTask = function(index) {
+    for(index=0; index < self.allTasks.length; index++) {
+      if(self.allTasks[index].completed === true) {
+         self.allTasks.splice(index, 1);
+      } else { self.allTasks }
+     }
+   };
 }]);
