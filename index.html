@@ -9,45 +9,38 @@
     <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
     <script src="js/app.js"></script>
     <script src="js/tasksController.js"></script>
+    <script src="js/navigationController.js"></script>
   </head>
 
   <body ng-controller="TasksController as controller">
     <div>
-    <h1> To do list </h1>
-      <form class="form-tasks">
-        <input type="text" ng-model="controller.submittedTask" placeholder="My new task is.." >
-        <button class="submit" ng-click="controller.addTasks()" >Submit</button>
-
-      </form>
-      <br>
-      <ul class="list-tasks "ng-repeat="task in controller.allTasks">
-        <span editable-text="task.task" e-form="textBtnForm">
-        {{task.task}}
-         <input class="completed" type='checkbox' ng-model="task.completed">
-        </span>
-        <button class="btn btn-default" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
-      </ul>
-    </div>
-     <h5> Number of tasks: {{ controller.calcAll()}} </h5>
+      <h1> To do list </h1>
       <section>
-        <div class="navigation-panels">
-          <button ng-click="tab = 1">All</button>
-          <button ng-click="tab = 2">Active</button>
-          <button ng-click="tab = 3">Completed</button>
-          <button ng-click="controller.deleteTask($index)">Delete</button>
-        </div>
-    <div class="panel" ng-show="tab===1" ng-repeat="task in controller.allTasks">
-        <h5> {{task.task}} </h5>
+          <form class="form-tasks">
+            <input type="text" ng-model="controller.submittedTask" placeholder="My new task is.." >
+            <button class="submit" ng-click="controller.addTasks()" >Submit</button>
+          </form><br>
+          <ul class="list-tasks "ng-repeat="task in controller.allTasks">
+            <span editable-text="task.task" e-form="textBtnForm"> {{task.task}}
+               <input class="completed" type='checkbox' ng-model="task.completed">
+            <button class="btn btn-default" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
+            </span>
+          </ul>
+        </section>
+         <section ng-controller="NavigationController as tab">
+            <span> Number of tasks: {{ controller.calcAll()}} </span>
+            <div class="navigation-panels">
+              <button ng-click="tab.setTab(1)">All</button>
+              <button ng-click="tab.setTab(2)">Active</button>
+              <button ng-click="tab.setTab(3)">Completed</button>
+              <button ng-click="controller.deleteTask($index)">Delete</button>
+            </div>
+            <div>
+              <ul ng-show="tab.isSet(1)" ng-repeat="task in controller.allTasks"> {{task.task}} </ul>
+              <ul ng-show="tab.isSet(2)" ng-repeat="task in controller.allTasks | filter:{completed: false }">{{ task.task }}</ul>
+              <ul ng-show="tab.isSet(3)" ng-repeat="task in controller.allTasks | filter:{completed: true }">{{ task.task }}</ul>
+            <div>
+        </section>
     </div>
-    <div class="panel" ng-show="tab===2" ng-repeat="task in controller.allTasks | filter:{completed: false }">
-        <h5> {{ task.task }} </h5>
-    </div>
-     <div class="panel" ng-show="tab===3" ng-repeat="task in controller.allTasks | filter:{completed: true }">
-        <h5> {{ task.task }} </h5>
-    </div>
-     <div class="panel" ng-show="tab===4" >
-        <h5> {{ task.task }} </h5>
-    </div>
-    </section>
   </body>
 </html>
