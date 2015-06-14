@@ -2,6 +2,7 @@
 <html lang="en" ng-app="ToDoList">
   <head>
     <meta charset="utf-8">
+    <title>To Do List</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -16,9 +17,9 @@
     <div>
       <h1> To do list </h1>
       <section>
-          <form class="form-tasks">
+          <form>
             <input type="text" ng-model="controller.submittedTask" placeholder="My new task is.." >
-            <button class="submit" ng-click="controller.addTasks()" >Submit</button>
+            <button class="btn" ng-click="controller.addTasks()" >Add</button>
           </form><br>
           <ul class="list-tasks "ng-repeat="task in controller.allTasks">
             <span editable-text="task.task" e-form="textBtnForm"> {{task.task}}
@@ -33,7 +34,7 @@
               <button ng-click="tab.setTab(1)">All</button>
               <button ng-click="tab.setTab(2)">Active</button>
               <button ng-click="tab.setTab(3)">Completed</button>
-              <button ng-click="controller.deleteTask($index)">Delete</button>
+              <button ng-click="controller.deleteTask($index)">Delete Completed Tasks</button>
             </div>
             <div>
               <ul ng-show="tab.isSet(1)" ng-repeat="task in controller.allTasks"> {{task.task}} </ul>
