@@ -30,7 +30,7 @@
         </section>
          <section ng-controller="NavigationController as tab">
             <span id="total"> Number of tasks: {{ controller.calcAll()}} </span>
-            <div class="navigation-panels">
+            <div>
               <button id="all" ng-click="tab.setTab(1)">All</button>
               <button id="active" ng-click="tab.setTab(2)">Active</button>
               <button id="done" ng-click="tab.setTab(3)">Completed</button>
