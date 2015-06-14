@@ -22,21 +22,21 @@
             <button class="btn" ng-click="controller.addTasks()" >Add</button>
           </form><br>
           <ul class="list-tasks "ng-repeat="task in controller.allTasks">
-            <span editable-text="task.task" e-form="textBtnForm"> {{task.task}}
+            <span class="edit" editable-text="task.task" e-form="textBtnForm"> {{task.task}}</span>
                <input class="completed" type='checkbox' ng-model="task.completed">
-            <button class="btn btn-default" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
+            <button class="editText" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
             </span>
           </ul>
         </section>
          <section ng-controller="NavigationController as tab">
-            <span> Number of tasks: {{ controller.calcAll()}} </span>
+            <span id="total"> Number of tasks: {{ controller.calcAll()}} </span>
             <div class="navigation-panels">
-              <button ng-click="tab.setTab(1)">All</button>
-              <button ng-click="tab.setTab(2)">Active</button>
-              <button ng-click="tab.setTab(3)">Completed</button>
-              <button ng-click="controller.deleteTask($index)">Delete Completed Tasks</button>
+              <button id="all" ng-click="tab.setTab(1)">All</button>
+              <button id="active" ng-click="tab.setTab(2)">Active</button>
+              <button id="done" ng-click="tab.setTab(3)">Completed</button>
+              <button id="remove" ng-click="controller.deleteTask($index)">Delete Completed Tasks</button>
             </div>
-            <div>
+            <div class="displayInf">
               <ul ng-show="tab.isSet(1)" ng-repeat="task in controller.allTasks"> {{task.task}} </ul>
               <ul ng-show="tab.isSet(2)" ng-repeat="task in controller.allTasks | filter:{completed: false }">{{ task.task }}</ul>
               <ul ng-show="tab.isSet(3)" ng-repeat="task in controller.allTasks | filter:{completed: true }">{{ task.task }}</ul>
