@@ -3,6 +3,7 @@
 To do list application built with:
 * Javascript.
 * Angular JS (open source front-end MVC framework).
+
 Tested with:
 * Karma (Spectacular Test Runner for Javascript).
 * Protractor (end-to-end test framework for AngularJS applications).
