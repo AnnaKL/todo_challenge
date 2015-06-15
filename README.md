@@ -36,8 +36,11 @@ I want to be able to clear my completed tasks
 So I never see them again
 ```
 
-
 ## Additional steps
+=======
+* Make sure you have set up `npm test` in your `package.json` so that it runs your Karma tests
+* Make sure you have your Protractor config file at `e2e/conf.js`
+* Make sure `npm start` spins up whatever serves up your app - `http-server`, Sinatra or Node
 
 * Deploy app to Heroku.
 * Create a persistance layer (e.g. MongoDB), or use LocalStorage or the filesystem through Node.
