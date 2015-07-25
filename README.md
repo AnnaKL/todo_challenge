@@ -1,6 +1,5 @@
-[![Code Climate](https://codeclimate.com/repos/55b3900d6956800b440156f4/badges/192f567a0a2be5a44346/gpa.svg)](https://codeclimate.com/repos/55b3900d6956800b440156f4/feed) 
+[![Code Climate](https://codeclimate.com/repos/55b3900d6956800b440156f4/badges/192f567a0a2be5a44346/gpa.svg)](https://codeclimate.com/repos/55b3900d6956800b440156f4/feed)   [![Build Status](https://travis-ci.org/AnnaKL/todo_challenge.svg)](https://travis-ci.org/AnnaKL/todo_challenge)
 
-[![Build Status](https://travis-ci.org/AnnaKL/todo_challenge.svg)](https://travis-ci.org/AnnaKL/todo_challenge)
 
 ## Todo Challenge
 
