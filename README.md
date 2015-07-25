@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/repos/55b3900d6956800b440156f4/badges/192f567a0a2be5a44346/gpa.svg)](https://codeclimate.com/repos/55b3900d6956800b440156f4/feed)
+
 ## Todo Challenge
 
 To do list application built with:
