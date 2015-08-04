@@ -11,7 +11,7 @@ Tested with:
 * Karma (Spectacular Test Runner for Javascript).
 * Protractor (end-to-end test framework for AngularJS applications).
 
-Implemented user stories:
+## Implemented user stories:
 
 ```
 As a forgetful person
@@ -39,12 +39,32 @@ I want to be able to clear my completed tasks
 So I never see them again
 ```
 
-## Additional steps
-=======
-* Make sure you have set up `npm test` in your `package.json` so that it runs your Karma tests
-* Make sure you have your Protractor config file at `e2e/conf.js`
-* Make sure `npm start` spins up whatever serves up your app - `http-server`, Sinatra or Node
+## Technologies:
 
-* Deploy app to Heroku.
-* Create a persistance layer (e.g. MongoDB), or use LocalStorage or the filesystem through Node.
-* Styling with CSS (Bootstrap or Foundation framework).
+* AngularJS
+* HTML
+* CSS
+* Karma and Protractor (for testing)
+
+## How to run:
+
+```
+git clone git@github.com:AnnaKL/todo_challenge.git
+cd todo_challenge
+npm start
+type http://localhost:8080/ in the browser
+```
+To run tests:
+```
+Karma:
+karma start test/karma.conf.js
+
+Protractor:
+http-server
+webdriver-manager start
+protractor test/e2e/conf.js
+```
+
+## To do:
+
+* Styling
