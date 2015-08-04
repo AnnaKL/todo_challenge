@@ -39,12 +39,6 @@ I want to be able to clear my completed tasks
 So I never see them again
 ```
 
-## Technologies:
-
-* AngularJS
-* HTML
-* CSS
-* Karma and Protractor (for testing)
 
 ## How to run:
 
